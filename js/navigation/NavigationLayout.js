@@ -9,33 +9,46 @@ import Map from "../screens/Map";
 import Favs from "../screens/Favs";
 import Schedule from "../screens/Schedule";
 
-const map = createStackNavigator({
+const mapStack = createStackNavigator({
   Map: {
     screen: Map
   }
 });
 
-const about = createStackNavigator({
+const aboutStack = createStackNavigator({
   About: {
     screen: About
   }
 });
 
-const favs = createStackNavigator({
+const favsStack = createStackNavigator({
   Favs: {
     screen: Favs
   }
 });
 
-const schedule = createStackNavigator({
+const scheduleStack = createStackNavigator({
   Schedule: {
     screen: Schedule
   }
 });
 
-export default createBottomTabNavigator({
-  About: about,
-  Map: map,
-  Favs: favs,
-  Schedule: schedule
-});
+export default createBottomTabNavigator(
+  {
+    About: aboutStack,
+    Map: mapStack,
+    Favs: favsStack,
+    Schedule: scheduleStack
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: "#e91e63",
+      labelStyle: {
+        fontSize: 12
+      },
+      style: {
+        backgroundColor: "beige"
+      }
+    }
+  }
+);
