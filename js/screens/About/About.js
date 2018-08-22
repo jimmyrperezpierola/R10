@@ -1,10 +1,21 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, ScrollView } from "react-native";
 
-const About = () => {
+const About = aboutPage => {
   return (
     <View>
-      <Text> About Page</Text>
+      <ScrollView>
+        <View />
+
+        {aboutPage.aboutPage.map(aboutPage => (
+          <View key={aboutPage.id}>
+            <Text>{`${aboutPage.title}`}</Text>
+            <Text>{` ${aboutPage.description}`}</Text>
+          </View>
+        ))}
+
+        <View />
+      </ScrollView>
     </View>
   );
 };
