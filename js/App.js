@@ -1,19 +1,38 @@
-import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { Component, Fragment } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  ScrollView,
+  Button
+} from "react-native";
 import AboutScreen from "./screens/About";
 import RootStackNavigator from "./navigation/RootStackNavigation";
-// import { ApolloProvider } from "react-apollo";
-// import { render } from "react-dom";
-
-// const App = () => (
-//   <ApolloProvider client={client}>
-//     <RootStackNavigator />;
-//   </ApolloProvider>
-// );
+import { ApolloProvider } from "react-apollo";
+import client from "./config/api.js";
+import { addToFav, getFav, removeFav } from "./config/models";
+import { FavProvider } from "./context/FavsContext";
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      favs: [],
+      nextId: null
+    };
+  }
+  componentDidMount() {
+    this.setState({ favs: getFav() });
+  }
   render() {
-    return <RootStackNavigator />;
+    return (
+      <ApolloProvider client={client}>
+        <FavProvider>
+          <RootStackNavigator />
+        </FavProvider>
+      </ApolloProvider>
+    );
   }
 }
 
