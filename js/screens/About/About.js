@@ -5,16 +5,12 @@ const About = aboutPage => {
   return (
     <View>
       <ScrollView>
-        <View />
-
         {aboutPage.aboutPage.map(aboutPage => (
           <View key={aboutPage.id}>
             <Text>{`${aboutPage.title}`}</Text>
             <Text>{` ${aboutPage.description}`}</Text>
           </View>
         ))}
-
-        <View />
       </ScrollView>
     </View>
   );
