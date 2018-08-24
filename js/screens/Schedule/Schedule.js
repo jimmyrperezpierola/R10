@@ -13,14 +13,13 @@ const Schedule = ({ data }) => {
       <ScrollView>
         <SectionList
           renderItem={({ item }) => (
-            <View key={item.id}>
+            <View keyExtractor={item => item.id}>
               <Text>{item.title}</Text>
               <Text>{item.location}</Text>
             </View>
           )}
           renderSectionHeader={({ section: { title } }) => <Text />}
           sections={data}
-          keyExtractor={item => item.id}
         />
       </ScrollView>
     </View>

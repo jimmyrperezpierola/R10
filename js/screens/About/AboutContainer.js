@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import About from "./About";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
-import { Text } from "react-native";
+import { Text, ActivityIndicator } from "react-native";
 export default class AboutContainer extends Component {
   static navigationOptions = {
     title: "About"
@@ -21,8 +21,8 @@ export default class AboutContainer extends Component {
         `}
       >
         {({ loading, error, data: { allConducts } }) => {
-          if (loading) return <Text>Loading...</Text>;
-          if (error) return <Text>Error :(</Text>;
+          if (loading) return <ActivityIndicator />;
+          if (error) return `Error!: ${error}`;
 
           return <About aboutPage={allConducts} />;
         }}
