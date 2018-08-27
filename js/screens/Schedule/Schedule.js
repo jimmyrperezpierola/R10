@@ -8,10 +8,10 @@ import {
 } from "react-native";
 import PropTypes from "prop-types";
 
-import { SessionList } from "../../components/SessionList";
+import SessionList from "../../components/SessionList";
 
-const Schedule = props => {
-  return <SessionList data={props.data} nav={props.nav} />;
+const Schedule = ({ data, nav }) => {
+  return <SessionList data={data} nav={nav} />;
 };
 
 export default Schedule;

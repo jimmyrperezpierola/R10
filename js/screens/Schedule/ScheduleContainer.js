@@ -20,10 +20,6 @@ export const ScheduleData = gql`
 export default class ScheduleContainer extends Component {
   static navigationOptions = { title: "Schedule" };
 
-  NavForSession = id => {
-    this.props.navigation.navigate("Session", { id: id });
-  };
-
   render() {
     return (
       <Query query={ScheduleData}>
@@ -34,7 +30,7 @@ export default class ScheduleContainer extends Component {
           return (
             <Schedule
               data={formatSessionData(allSessions)}
-              nav={id => this.NavForSession(id)}
+              nav={this.props.navigation}
             />
           );
         }}

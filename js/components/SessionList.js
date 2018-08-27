@@ -9,23 +9,21 @@ import {
 } from "react-native";
 import Moment from "moment";
 
-export const SessionList = ({ data, nav }) => {
+const SessionList = ({ data, nav }) => {
   return (
     <ScrollView>
       <SectionList
         renderItem={({ item }) => (
-          console.log(item),
-          (
-            <TouchableHighlight onPress={() => nav(item.id)}>
-              <View>
-                <Text>{item.title}</Text>
-                <Text>{item.location}</Text>
-              </View>
-            </TouchableHighlight>
-          )
-        )}
-        renderSectionHeader={({ section: { title } }) => (
-          <Text>{Moment(title).format("h:mm A")}</Text>
+          <TouchableHighlight
+            onPress={() => nav.navigate("Session", { itemId: item.id })}
+          >
+            <View>
+              <Text>{item.title}</Text>
+              <Text>{item.location}</Text>
+              <Text>{Moment(item.startTime).format("h:mm A")}</Text>
+              <Text>{item.name}</Text>
+            </View>
+          </TouchableHighlight>
         )}
         sections={data}
         keyExtractor={(item, index) => item + index}
@@ -33,3 +31,5 @@ export const SessionList = ({ data, nav }) => {
     </ScrollView>
   );
 };
+
+export default SessionList;
