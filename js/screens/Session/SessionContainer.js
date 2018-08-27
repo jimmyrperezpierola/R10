@@ -43,7 +43,7 @@ class SessionContainer extends Component {
                     data={data}
                     navigation={this.props.navigation}
                     sessionId={sessionId}
-                    favIds={values.favIds}
+                    favIds={values}
                   />
                 );
               }}
