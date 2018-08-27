@@ -6,24 +6,12 @@ import {
   SectionList,
   TouchableHighlight
 } from "react-native";
+import PropTypes from "prop-types";
 
-const Schedule = ({ data }) => {
-  return (
-    <View>
-      <ScrollView>
-        <SectionList
-          renderItem={({ item }) => (
-            <View keyExtractor={item => item.id}>
-              <Text>{item.title}</Text>
-              <Text>{item.location}</Text>
-            </View>
-          )}
-          renderSectionHeader={({ section: { title } }) => <Text />}
-          sections={data}
-        />
-      </ScrollView>
-    </View>
-  );
+import { SessionList } from "../../components/SessionList";
+
+const Schedule = props => {
+  return <SessionList data={props.data} nav={props.nav} />;
 };
 
 export default Schedule;

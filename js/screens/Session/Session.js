@@ -1,18 +1,11 @@
-import React from "react";
-import {
-  Text,
-  View,
-  ScrollView,
-  SectionList,
-  TouchableHighlight
-} from "react-native";
+import React, { Component } from "react";
+import { Text, View } from "react-native";
+import Moment from "moment";
 
-const Session = ({ data }) => {
+export const SingleSession = ({ data, addFav, removeFav }) => {
   return (
     <View>
-      <Text>Sessions</Text>
+      <Text>Hello</Text>
     </View>
   );
 };
-
-export default Session;
