@@ -30,7 +30,7 @@ export default class ScheduleContainer extends Component {
           return (
             <Schedule
               data={formatSessionData(allSessions)}
-              nav={this.props.navigation}
+              navigation={this.props.navigation}
             />
           );
         }}

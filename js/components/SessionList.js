@@ -9,13 +9,13 @@ import {
 } from "react-native";
 import Moment from "moment";
 
-const SessionList = ({ data, nav }) => {
+const SessionList = ({ data, navigation }) => {
   return (
     <ScrollView>
       <SectionList
         renderItem={({ item }) => (
           <TouchableHighlight
-            onPress={() => nav.navigate("Session", { itemId: item.id })}
+            onPress={() => navigation.navigate("Session", { itemId: item.id })}
           >
             <View>
               <Text>{item.title}</Text>

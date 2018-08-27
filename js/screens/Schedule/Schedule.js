@@ -10,8 +10,8 @@ import PropTypes from "prop-types";
 
 import SessionList from "../../components/SessionList";
 
-const Schedule = ({ data, nav }) => {
-  return <SessionList data={data} nav={nav} />;
+const Schedule = ({ data, navigation }) => {
+  return <SessionList data={data} navigation={navigation} />;
 };
 
 export default Schedule;
