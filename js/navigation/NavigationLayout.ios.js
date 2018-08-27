@@ -107,7 +107,7 @@ export default createBottomTabNavigator(
         fontSize: 10
       },
       style: {
-        backgroundColor: "beige"
+        backgroundColor: "black"
       }
     }
   }

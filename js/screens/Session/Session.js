@@ -7,6 +7,7 @@ import {
   TouchableHighlight
 } from "react-native";
 import Moment from "moment";
+import styles from "./styles";
 
 export const SingleSession = ({ data, navigation, favIds }) => {
   const favIdArr = [];
