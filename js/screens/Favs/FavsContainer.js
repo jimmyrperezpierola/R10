@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Favs from "./Favs";
 import FavsContext from "../../context/FavsContext";
+import gql from "graphql-tag";
+import { Query } from "react-apollo";
+import { ActivityIndicator } from "react-native";
 
 export default class FavsContainer extends Component {
   static navigationOptions = {
@@ -8,12 +11,44 @@ export default class FavsContainer extends Component {
   };
   render() {
     return (
-      <FavsContext.Consumer>
-        {values => {
-          console.log(values);
-          return <Favs />;
+      <Query
+        query={gql`
+          {
+            allSessions {
+              startTime
+              location
+              title
+              id
+            }
+          }
+        `}
+      >
+        {({ loading, error, data: { allSessions } }) => {
+          if (loading) return <ActivityIndicator />;
+          if (error) return <Text>Error :(</Text>;
+          return (
+            <FavsContext.Consumer>
+              {values => {
+                const favArr = [];
+                values.favIds.map(item => favArr.push(item.id));
+
+                const favSessions = allSessions.filter(session =>
+                  favArr.includes(session.id)
+                );
+                let sessions = favSessions;
+
+                return (
+                  <Favs
+                    navigation={this.props.navigation}
+                    favIds={favArr}
+                    data={sessions}
+                  />
+                );
+              }}
+            </FavsContext.Consumer>
+          );
         }}
-      </FavsContext.Consumer>
+      </Query>
     );
   }
 }

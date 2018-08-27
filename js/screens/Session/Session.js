@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, Button } from "react-native";
+import { Text, View, TouchableHighlight } from "react-native";
 import Moment from "moment";
 
 export const SingleSession = ({ data, addFav, removeFav }) => {
@@ -9,11 +9,12 @@ export const SingleSession = ({ data, addFav, removeFav }) => {
       <Text>{data.Session.location}</Text>
       <Text>{Moment(data.Session.startTime).format("h:mm A")}</Text>
       <Text>{data.Session.speaker.name}</Text>
-      <Button title="add to favs" onPress={() => addFav(data.Session.id)} />
-      <Button
-        title="remove from favs"
-        onPress={() => removeFav(data.Session.id)}
-      />
+      <TouchableHighlight onPress={() => addFav(data.Session.id)}>
+        <Text>Add to Favs</Text>
+      </TouchableHighlight>
+      <TouchableHighlight onPress={() => removeFav(data.Session.id)}>
+        <Text>Remove from Favs</Text>
+      </TouchableHighlight>
     </View>
   );
 };
