@@ -35,13 +35,13 @@ export default class FavsContainer extends Component {
                 const favSessions = allSessions.filter(session =>
                   favArr.includes(session.id)
                 );
-                let sessions = favSessions;
+                let data = favSessions;
 
                 return (
                   <Favs
                     navigation={this.props.navigation}
                     favIds={favArr}
-                    data={sessions}
+                    data={data}
                   />
                 );
               }}

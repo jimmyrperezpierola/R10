@@ -7,9 +7,9 @@ const Favs = ({ data, navigation, favIds }) => {
   return (
     <ScrollView>
       <SessionList
-        data={data}
+        data={formatSessionData(data)}
         navigation={navigation}
-        favIds={formatSessionData(favIds)}
+        favIds={favIds}
       />
     </ScrollView>
   );
