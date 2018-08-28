@@ -1,10 +1,18 @@
 import React from "react";
-import { Text, View, ScrollView, Image, Fragment } from "react-native";
+import {
+  Text,
+  StatusBar,
+  View,
+  ScrollView,
+  Image,
+  Fragment
+} from "react-native";
 import styles from "./styles";
 
 const About = aboutPage => {
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="light-content" />
       <ScrollView>
         <Image
           source={require("../../assets/images/r10_logo.png")}

@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import moment from "moment";
 import Icon from "react-native-vector-icons/Ionicons";
+import styles from "./styles";
 
 const SessionList = ({ data, navigation, favIds }) => {
   return (
@@ -19,13 +20,14 @@ const SessionList = ({ data, navigation, favIds }) => {
           <TouchableHighlight
             onPress={() => navigation.navigate("Session", { itemId: item.id })}
           >
-            <View>
-              <Text>{item.title}</Text>
-              <Text>{item.location}</Text>
+            <View style={styles.sessionItem}>
+              <Text style={styles.title}>{item.title}</Text>
+              <Text style={styles.location}>{item.location}</Text>
               {!favIds.includes(item.id) ? (
                 <Text />
               ) : (
                 <Icon
+                  style={styles.heartIcon}
                   name={Platform.select({
                     ios: "ios-heart",
                     android: "md-heart"
@@ -39,7 +41,9 @@ const SessionList = ({ data, navigation, favIds }) => {
           </TouchableHighlight>
         )}
         renderSectionHeader={({ section: { title } }) => (
-          <Text>{moment(title).format("h:mm A")}</Text>
+          <Text style={styles.sessionHeader}>
+            {moment(title).format("h:mm A")}
+          </Text>
         )}
         sections={data}
         keyExtractor={(item, index) => item + index}

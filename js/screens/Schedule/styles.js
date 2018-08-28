@@ -5,9 +5,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   },
   container: {
-    fontFamily: "Montserrat",
-    margin: 10,
-    marginBottom: 0
+    fontFamily: "Montserrat"
   }
 });
 
