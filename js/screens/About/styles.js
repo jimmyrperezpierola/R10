@@ -12,8 +12,7 @@ const styles = StyleSheet.create({
     marginRight: "auto"
   },
   textBody: {
-    marginLeft: 10,
-    marginRight: 10,
+    margin: 10,
     borderTopColor: "#e6e6e6",
     borderTopWidth: 1.5,
     borderBottomColor: "#e6e6e6",

@@ -6,13 +6,13 @@ import styles from "./styles";
 
 const Favs = ({ data, navigation, favIds }) => {
   return (
-    <ScrollView>
+    <View style={styles.container}>
       <SessionList
         data={formatSessionData(data)}
         navigation={navigation}
         favIds={favIds}
       />
-    </ScrollView>
+    </View>
   );
 };
 

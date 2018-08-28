@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  body: {
+  container: {
     fontFamily: "Montserrat",
     backgroundColor: "white"
   }

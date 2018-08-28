@@ -4,7 +4,7 @@ import styles from "./styles";
 
 const Map = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text> Map Page </Text>
     </View>
   );

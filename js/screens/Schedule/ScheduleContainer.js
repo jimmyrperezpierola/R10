@@ -4,6 +4,7 @@ import Schedule from "./Schedule.js";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import { formatSessionData } from "../../lib/FormatSessions";
+import FavsContext from "../../context/FavsContext";
 
 export const ScheduleData = gql`
   {
@@ -28,10 +29,19 @@ export default class ScheduleContainer extends Component {
           if (error) return <Text>Error</Text>;
 
           return (
-            <Schedule
-              data={formatSessionData(allSessions)}
-              navigation={this.props.navigation}
-            />
+            <FavsContext.Consumer>
+              {values => {
+                const favArr = [];
+                values.favIds.map(item => favArr.push(item.id));
+                return (
+                  <Schedule
+                    navigation={this.props.navigation}
+                    data={formatSessionData(allSessions)}
+                    favIds={favArr}
+                  />
+                );
+              }}
+            </FavsContext.Consumer>
           );
         }}
       </Query>
