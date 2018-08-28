@@ -1,6 +1,7 @@
 import React from "react";
 import { createStackNavigator, createDrawerNavigator } from "react-navigation";
 import Schedule from "../screens/Schedule";
+import Session from "../screens/Session";
 import About from "../screens/About";
 import Favs from "../screens/Favs";
 import Map from "../screens/Map";
@@ -37,6 +38,9 @@ const favsStack = createStackNavigator(
   {
     Favs: {
       screen: Favs
+    },
+    Session: {
+      screen: Session
     }
   },
   {
@@ -50,6 +54,9 @@ const scheduleStack = createStackNavigator(
   {
     Schedule: {
       screen: Schedule
+    },
+    Session: {
+      screen: Session
     }
   },
   {

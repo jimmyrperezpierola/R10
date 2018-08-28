@@ -2,13 +2,13 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   body: {
-    fontFamily: "Montserrat",
     backgroundColor: "white",
     height: "100%"
   },
   container: {
     margin: 10,
-    marginBottom: 0
+    marginBottom: 0,
+    fontFamily: "Montserrat"
   },
   title: {
     fontSize: 30,
