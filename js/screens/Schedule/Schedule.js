@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import PropTypes from "prop-types";
 import styles from "./styles";
-import SessionList from "../../components/SessionList";
+import SessionList from "../../components/SessionList/SessionList";
 
 const Schedule = ({ data, navigation, favIds }) => {
   return (

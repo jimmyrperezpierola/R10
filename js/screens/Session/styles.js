@@ -6,13 +6,15 @@ const styles = StyleSheet.create({
     height: "100%"
   },
   container: {
-    margin: 10,
-    marginBottom: 0,
+    marginRight: 10,
+    marginLeft: 10,
     fontFamily: "Montserrat"
   },
   title: {
     fontSize: 30,
-    marginBottom: 10
+    marginBottom: 10,
+    fontFamily: "Montserrat",
+    color: "black"
   },
   heart: {
     position: "absolute",
@@ -21,21 +23,26 @@ const styles = StyleSheet.create({
   },
   location: {
     color: "#999999",
-    paddingTop: 10
+    paddingTop: 10,
+    fontFamily: "Montserrat"
   },
   sessionTime: {
     color: "#cf392a",
     paddingTop: 10,
-    paddingBottom: 10
+    paddingBottom: 10,
+    fontFamily: "Montserrat"
   },
   description: {
     fontSize: 20,
-    paddingBottom: 10
+    paddingBottom: 10,
+    fontFamily: "Montserrat",
+    color: "black"
   },
   presented: {
     color: "#999999",
     fontSize: 20,
-    paddingBottom: 10
+    paddingBottom: 10,
+    fontFamily: "Montserrat"
   },
   speaker: {
     paddingBottom: 10,
@@ -53,7 +60,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     position: "relative",
     padding: 10,
-    top: 10
+    top: 10,
+    fontFamily: "Montserrat",
+    color: "black"
+  },
+  FavText: {
+    textAlign: "center",
+    fontSize: 16,
+    color: "white",
+    padding: 15,
+    fontFamily: "Montserrat"
   }
 });
 

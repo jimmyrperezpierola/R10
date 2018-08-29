@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Platform } from "react-native";
 import { Header } from "react-navigation";
 import LinearGradient from "react-native-linear-gradient";
 
@@ -21,5 +21,12 @@ export const sharedNavigationOptions = navigation => ({
   headerStyle: {
     backgroundColor: "transparent"
   },
-  headerTintColor: "white"
+  headerTintColor: "white",
+  headerTitleStyle: {
+    fontWeight: "bold",
+    fontFamily: Platform.select({
+      ios: "Montserrat",
+      android: "Montserrat-Regular"
+    })
+  }
 });

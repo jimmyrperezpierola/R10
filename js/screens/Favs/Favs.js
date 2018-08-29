@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View, ScrollView } from "react-native";
-import SessionList from "../../components/SessionList";
+import SessionList from "../../components/SessionList/SessionList";
 import { formatSessionData } from "../../lib/FormatSessions";
 import styles from "./styles";
 
