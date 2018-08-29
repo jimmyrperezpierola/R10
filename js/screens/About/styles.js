@@ -31,17 +31,6 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10
   },
-  aboutDes: {
-    fontFamily: "Montserrat",
-    color: "black"
-  },
-  aboutTitle: {
-    fontFamily: "Montserrat",
-    color: "#9963ea",
-    fontSize: 20,
-    paddingTop: 10,
-    paddingBottom: 10
-  },
   copyright: {
     margin: 10,
     fontFamily: "Montserrat",

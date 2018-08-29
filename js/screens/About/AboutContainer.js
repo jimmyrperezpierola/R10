@@ -21,7 +21,7 @@ export default class AboutContainer extends Component {
         `}
       >
         {({ loading, error, data: { allConducts } }) => {
-          if (loading) return <ActivityIndicator />;
+          if (loading) return <ActivityIndicator size="large" />;
           if (error) return <Text>Error</Text>;
 
           return <About aboutPage={allConducts} />;

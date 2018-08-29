@@ -24,7 +24,7 @@ export default class FavsContainer extends Component {
         `}
       >
         {({ loading, error, data: { allSessions } }) => {
-          if (loading) return <ActivityIndicator />;
+          if (loading) return <ActivityIndicator size="large" />;
           if (error) return <Text>Error</Text>;
           return (
             <FavsContext.Consumer>

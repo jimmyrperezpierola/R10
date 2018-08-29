@@ -33,7 +33,7 @@ class SessionContainer extends Component {
     return (
       <Query query={SessionQuery} variables={{ id: sessionId }}>
         {({ loading, error, data }) => {
-          if (loading) return <ActivityIndicator />;
+          if (loading) return <ActivityIndicator size="large" />;
           if (error) return <Text>Error</Text>;
           return (
             <FavsContext.Consumer>

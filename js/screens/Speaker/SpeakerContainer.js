@@ -26,7 +26,7 @@ export default class SpeakerContainer extends Component {
     return (
       <Query query={speakerQuery} variables={{ id: speakerId }}>
         {({ loading, error, data }) => {
-          if (loading) return <ActivityIndicator />;
+          if (loading) return <ActivityIndicator size="large" />;
           if (error) return <Text>Error</Text>;
 
           return (
